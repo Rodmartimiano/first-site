@@ -1,15 +1,9 @@
-import "./BasicButton.css"
+import "./BasicButton.css";
 
 type BasicButtonParams = {
+  label: string;
+};
 
-    label: string;
-
-}
-
-
-export default function BasicButton(params: BasicButtonParams){
-    
-    
-    return <button className="BasicButton">{params.label}</button>
-    
+export default function BasicButton(params: BasicButtonParams) {
+  return <button className="BasicButton">{params.label}</button>;
 }
