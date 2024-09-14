@@ -1,39 +1,16 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import BasicButton from "./components/BasicButton/BasicButton";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Mateus</h1>
-      <BasicButton label="botao1" />
-      <BasicButton label="botao12" />
-      <BasicButton label="botao13" />
-      <BasicButton label="botao14" />
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div style={{ padding: 50, display: "flex", gap: 10 }}>
+      <BasicButton label="Button" appearence="primary" size="small" />
+      <BasicButton label="Button" appearence="primary" size="medium" />
+      <BasicButton label="Button" appearence="secondary" size="small" />
+      <BasicButton label="Button" appearence="secondary" size="medium" />
+      <BasicButton label="Button" appearence="tertiary" size="small" />
+      <BasicButton label="Button" appearence="tertiary" size="medium" />
+    </div>
   );
 }
 

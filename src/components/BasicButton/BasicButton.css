@@ -1,3 +1,56 @@
 .BasicButton {
-  font-size: 50px;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #1A191E;
+}
+
+.BasicButton.size-small {
+  font-size: 15px;
+  line-height: 100%;
+  padding: 12px 16px;
+  max-height: 40px;
+}
+
+.BasicButton.size-medium {
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -3%;
+  padding: 16px 24px;
+  max-height: 50px;
+}
+
+.BasicButton.appeareance-primary {
+  background-color: white;
+  border: 2px solid #E8E8E8;
+}
+
+.BasicButton.appeareance-primary:hover {
+  background-color: #E8E8E8;
+  border: 2px solid #E8E8E8;
+}
+
+.BasicButton.appeareance-secondary {
+  background-color: #5BB5A2;
+  border: 2px solid #5BB5A2;
+  color: white;
+}
+
+.BasicButton.appeareance-secondary:hover {
+  background-color: #55a594;
+  border: 2px solid #55a594;
+  color: white;
+}
+
+.BasicButton.appeareance-tertiary {
+  background-color: #1A191E;
+  border: 2px solid #1A191E;
+  color: white;
+}
+
+.BasicButton.appeareance-tertiary:hover {
+  background-color: #333333;
+  border: 2px solid #333333;
+  color: white;
 }
