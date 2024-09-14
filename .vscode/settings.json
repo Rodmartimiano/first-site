@@ -1,0 +1,28 @@
+{
+    "editor.indentSize": "tabSize",
+    "editor.tabSize": 2,
+    "editor.autoIndent": "full",
+    "editor.detectIndentation": true,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "files.exclude": {
+        "**/.git": false,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript][javascriptreact][typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json][jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[css][scss][less]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    }
+}
