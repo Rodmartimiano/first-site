@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+.Label {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+  color: #1A191E;
+  font-family: 'Inter', sans-serif;
+}
+
+.Label.size-small {
+  font-size: 12px;
+  line-height: 180%;
+  padding: 0px 6px;
+  max-height: 40px;
+}
+
+.Label.size-medium {
+  font-size: 13px;
+  line-height: 180%;
+  padding: 4px 10px;
+  max-height: 50%;
+}
+
+.Label.appearence-primary {
+  background-color: 0;
+}
+
+.Label.appearence-primary:hover {
+  background-color: #F8F8F8
+}
+
+.Label.appearence-secondary {
+  color: #5BB5A2;
+
+}
+
+.Label.appearence-secondary:hover {
+  background-color: #E8F2EE;
+  color: #5BB5A2;
+
+}

@@ -1,0 +1,36 @@
+.Logo {
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+
+}
+
+.Logo.size-small {
+  font-size: 15px;
+  line-height: 100%;
+  max-height: 40px;
+}
+
+.Logo.size-medium {
+
+  font-size: 32px;
+  line-height: 100%;
+  max-height: 50px;
+}
+
+.Logo.appearence-primary {
+  color: white;
+  text-shadow: 1px 1px 0 #1A191E,
+    -1px 1px 0 #1A191E,
+    -1px -1px 0 #1A191E,
+    1px -1px 0 #1A191E;
+}
+
+.Logo.appearence-secondary {
+  color: #5BB5A2;
+
+}
+
+.Logo.appearence-tertiary {
+  color: #1A191E;
+}
