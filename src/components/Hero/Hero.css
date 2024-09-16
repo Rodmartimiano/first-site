@@ -1,0 +1,14 @@
+.Padding {
+  padding: 128px 240px;
+}
+
+.Container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Header-medium {
+  font-size: 100px;
+  line-height: 110px;
+  font-weight: 500;
+}
