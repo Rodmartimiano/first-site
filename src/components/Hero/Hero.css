@@ -1,14 +1,48 @@
-.Padding {
-  padding: 128px 240px;
+.Hero {
+  padding: 128px 0px;
 }
 
-.Container {
+.Hero .container {
   display: flex;
-  justify-content: space-between;
+  gap: 165px;
 }
 
-.Header-medium {
+.Hero .header-medium {
   font-size: 100px;
   line-height: 110px;
   font-weight: 500;
+  width: 535px;
+  margin-bottom: 16px;
+}
+
+.Hero .description h2 {
+  font-size: 24px;
+  line-height: 170%;
+  font-weight: 500;
+  width: 600px;
+  margin-bottom: 32px;
+}
+
+.Hero .list {
+  margin-bottom: 64px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Hero .list .hero-text-item {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 16px;
+  flex: 1 0 50%;
+}
+
+.Hero .list .hero-text-item span {
+  font-size: 18px;
+  line-height: 180%;
+  font-weight: 500;
+}
+
+.Hero .bottom-buttons {
+  display: flex;
+  gap: 32px;
 }
