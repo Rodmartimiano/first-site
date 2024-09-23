@@ -1,15 +1,12 @@
-import "./App.css";
 import Features from "./components/Features/Features";
-
-import HeaderApp from "./components/Header/HeaderApp";
 import Hero from "./components/Hero/Hero";
+import NavBar from "./components/Navbar/NavBar";
+import "./App.css";
 
 function App() {
   return (
     <div>
-      <div className="HeaderApp">
-        <HeaderApp />
-      </div>
+      <NavBar />
       <Hero />
       <Features />
     </div>
