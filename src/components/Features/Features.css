@@ -1,7 +1,14 @@
 .Features {
-  padding: 128px;
+  padding: 128px 0;
   display: flex;
   margin: 0 auto;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .Features {
+    flex-direction: column;
+  }
 }
 
 .Features .container {
@@ -11,7 +18,6 @@
 }
 
 .Features .left {
-  width: 1200px;
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -71,6 +77,5 @@
 }
 
 .Features .cellphone img {
-  width: 380px;
-  margin-left: 96px;
+  width: 100%;
 }
