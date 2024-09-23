@@ -1,9 +1,8 @@
 .Hero {
-  padding: 128px;
+  padding: 128px 0;
   display: flex;
   margin: 0 auto;
   justify-content: center;
-
 }
 
 .Hero .container {
@@ -12,12 +11,23 @@
   gap: 165px;
 }
 
+@media screen and (max-width: 1366px) {
+  .Hero .container {
+    padding: 0 50px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .Hero .container {
+    gap: 0px;
+  }
+}
 
 .Hero .header-medium {
   font-size: 100px;
   line-height: 110px;
   font-weight: 500;
-  width: 535px;
+  max-width: 535px;
   margin-bottom: 16px;
 }
 
@@ -25,7 +35,7 @@
   font-size: 24px;
   line-height: 170%;
   font-weight: 500;
-  width: 600px;
+  max-width: 600px;
   margin-bottom: 32px;
 }
 
@@ -51,6 +61,21 @@
 .Hero .bottom-buttons {
   display: flex;
   gap: 32px;
+  align-items: center;
 }
 
-.Hero .cards {}
+.Hero .cards {
+  position: relative;
+}
+
+.Hero .cards img {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .Hero .cards {
+    display: none;
+  }
+}

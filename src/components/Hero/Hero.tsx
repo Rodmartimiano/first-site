@@ -3,50 +3,109 @@ import "./Hero.css";
 import Label from "../Label/Label";
 import cardimg from "../../assets/cards.svg";
 import badge from "../../assets/badge.svg";
+import { useEffect, useState } from "react";
+
+type HeroData = {
+  mainTitle: string;
+  description: string;
+  badgeTexts: string[];
+  showOpenAccount: boolean;
+  showCompareCards: boolean;
+};
+
+const heroMock: HeroData = {
+  mainTitle: "",
+  description: "",
+  badgeTexts: [],
+  showOpenAccount: false,
+  showCompareCards: false,
+};
+
+async function getServerData(): Promise<HeroData> {
+  const serverReponse = await fetch("http://localhost:3000/hero-data", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userId: 1,
+    }),
+  });
+
+  const response = await serverReponse.json();
+
+  return response as HeroData;
+}
 
 function Hero() {
+  const [heroJsonData, setHeroJsonData] = useState<HeroData>(heroMock);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    (async () => {
+      setLoading(true);
+
+      const serverData = await getServerData();
+
+      setHeroJsonData(serverData);
+
+      setLoading(false);
+    })();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="Hero">
+        <div className="container">
+          <div style={{ fontSize: 100 }}>Loading...</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="Hero">
       <div className="container">
         <div className="grid">
           <div className="title">
-            <h1 className="header-medium">Banking starts here.</h1>
+            <h1 className="header-medium">{heroJsonData.mainTitle}</h1>
           </div>
+
           <div className="description">
-            <h2>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore.
-            </h2>
+            <h2>{heroJsonData.description}</h2>
           </div>
+
           <div className="list">
-            <div className="hero-text-item">
-              <img src={badge} alt="badge images" />
-              <span>Instant Transfer</span>
-            </div>
-            <div className="hero-text-item">
-              <img src={badge} alt="badge images" />
-              <span>Instant Transfer</span>
-            </div>
-            <div className="hero-text-item">
-              <img src={badge} alt="badge images" />
-              <span>Instant Transfer</span>
-            </div>
-            <div className="hero-text-item">
-              <img src={badge} alt="badge images" />
-              <span>Instant Transfer</span>
-            </div>
+            {heroJsonData.badgeTexts.map((badgeText) => {
+              return (
+                <div key={badgeText} className="hero-text-item">
+                  <img src={badge} alt="badge images" />
+                  <span>{badgeText}</span>
+                </div>
+              );
+            })}
           </div>
+
           <div className="bottom-buttons">
-            <BasicButton
-              label="Open Account"
-              size="medium"
-              appearence="secondary"
-            />
-            <Label
-              label="Compare Cards ->"
-              size="medium"
-              appearence="secondary"
-            />
+            {heroJsonData.showOpenAccount ? (
+              <BasicButton
+                label="Open Account"
+                size="medium"
+                appearence="secondary"
+              />
+            ) : (
+              ""
+            )}
+
+            {heroJsonData.showCompareCards ? (
+              <Label
+                label="Compare Cards ->"
+                size="medium"
+                appearence="secondary"
+              />
+            ) : (
+              ""
+            )}
           </div>
         </div>
         <div className="cards">
