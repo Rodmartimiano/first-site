@@ -5,7 +5,7 @@ import "./NavBar.css";
 
 function NavBar() {
   return (
-    <div className="NavBarMenu">
+    <div className="NavBar">
       <div className="LogoMenu">
         <Logo label="banquee." size="medium" appearence="secondary" />
       </div>
@@ -15,7 +15,7 @@ function NavBar() {
         <Label label="Support" size="medium" appearence="primary" />
         <Label label="Blog" size="medium" appearence="primary" />
       </div>
-      <div className="AccountMenu">
+      <div className="account-menu">
         <Label label="Login" size="medium" appearence="secondary" />
         <BasicButton label="Open Account" size="small" appearence="secondary" />
       </div>

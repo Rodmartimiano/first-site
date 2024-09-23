@@ -1,6 +1,11 @@
-.NavBarMenu {
+.NavBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
 
+.NavBar .account-menu {
+  gap: 12px;
+  display: flex;
+  align-items: center;
 }

@@ -2,7 +2,6 @@
   padding: 128px;
   display: flex;
   margin: 0 auto;
-  justify-content: center;
 }
 
 .Features .container {
@@ -40,7 +39,7 @@
   display: flex;
   box-sizing: border-box;
   border-radius: 16px;
-  border: 1px #E8E8E8 solid;
+  border: 1px #e8e8e8 solid;
   padding: 32px;
   flex: 0 1 calc(50% - 32px);
   margin-bottom: 32px;
@@ -68,7 +67,7 @@
 
 .Features .cellphone {
   display: flex;
-
+  align-items: flex-start;
 }
 
 .Features .cellphone img {
