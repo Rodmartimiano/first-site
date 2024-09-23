@@ -23,6 +23,18 @@ function Hero() {
               <img src={badge} alt="badge images" />
               <span>Instant Transfer</span>
             </div>
+            <div className="hero-text-item">
+              <img src={badge} alt="badge images" />
+              <span>Instant Transfer</span>
+            </div>
+            <div className="hero-text-item">
+              <img src={badge} alt="badge images" />
+              <span>Instant Transfer</span>
+            </div>
+            <div className="hero-text-item">
+              <img src={badge} alt="badge images" />
+              <span>Instant Transfer</span>
+            </div>
           </div>
           <div className="bottom-buttons">
             <BasicButton

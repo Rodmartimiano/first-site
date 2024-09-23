@@ -1,0 +1,77 @@
+.Features {
+  padding: 128px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.Features .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 124px;
+}
+
+.Features .left {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 600px;
+  margin-left: 0;
+}
+
+.Features .header-medium {
+  font-size: 80px;
+  line-height: 110%;
+  text-wrap: balance;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+.Features .list {
+  margin-bottom: 64px;
+  width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Features .list .features-text-item {
+  display: flex;
+  box-sizing: border-box;
+  border-radius: 16px;
+  border: 1px #E8E8E8 solid;
+  padding: 32px;
+  flex: 0 1 calc(50% - 32px);
+  margin-bottom: 32px;
+  margin-block-end: 32px;
+  align-items: baseline;
+  flex-direction: column;
+}
+
+.Features .list .features-text-item h3 {
+  margin: 8px;
+  margin-left: 0px;
+  font-size: 20px;
+  font-weight: 120;
+  text-wrap: balance;
+  width: 50%;
+  text-align: left;
+}
+
+.Features .list .features-text-item p {
+  margin: 20;
+  font-size: 16px;
+  color: #666;
+  font-weight: 160;
+}
+
+.Features .cellphone {
+  display: flex;
+
+}
+
+.Features .cellphone img {
+  width: 380px;
+  margin-left: 96px;
+}

@@ -1,11 +1,17 @@
 .Hero {
-  padding: 128px 0px;
+  padding: 128px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+
 }
 
 .Hero .container {
   display: flex;
+  justify-content: space-between;
   gap: 165px;
 }
+
 
 .Hero .header-medium {
   font-size: 100px;
@@ -46,3 +52,5 @@
   display: flex;
   gap: 32px;
 }
+
+.Hero .cards {}
