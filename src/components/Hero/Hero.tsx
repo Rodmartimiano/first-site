@@ -21,30 +21,47 @@ const heroMock: HeroData = {
   showCompareCards: false,
 };
 
-function getServerData(): HeroData {
-  return {
-    mainTitle: "Banking starts here",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-    badgeTexts: [
-      "Instant Transfer",
-      "Easy to use",
-      "Access globally",
-      "Online support",
-    ],
-    showOpenAccount: true,
-    showCompareCards: true,
-  };
+async function getServerData(): Promise<HeroData> {
+  const serverReponse = await fetch("http://localhost:3000/hero-data", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userId: 1,
+    }),
+  });
+
+  const response = await serverReponse.json();
+
+  return response as HeroData;
 }
 
 function Hero() {
   const [heroJsonData, setHeroJsonData] = useState<HeroData>(heroMock);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    const serverData = getServerData();
+    (async () => {
+      setLoading(true);
 
-    setHeroJsonData(serverData);
+      const serverData = await getServerData();
+
+      setHeroJsonData(serverData);
+
+      setLoading(false);
+    })();
   }, []);
+
+  if (loading) {
+    return (
+      <div className="Hero">
+        <div className="container">
+          <div style={{ fontSize: 100 }}>Loading...</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="Hero">
@@ -61,7 +78,7 @@ function Hero() {
           <div className="list">
             {heroJsonData.badgeTexts.map((badgeText) => {
               return (
-                <div className="hero-text-item">
+                <div key={badgeText} className="hero-text-item">
                   <img src={badge} alt="badge images" />
                   <span>{badgeText}</span>
                 </div>
