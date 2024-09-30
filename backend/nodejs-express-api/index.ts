@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import heroBannerController from "./controllers/heroBannerController";
+import featuresBannerController from "./controllers/featuresBannerController";
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(
 const port = 3000;
 
 app.post("/hero-data", heroBannerController);
+app.post("/features-data", featuresBannerController);
 
 // TODO more apis
 // app.get("/features-data", featuresDataController);

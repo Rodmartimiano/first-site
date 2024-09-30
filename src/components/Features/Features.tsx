@@ -6,74 +6,92 @@ import badgeMobile from "../../assets/badgeMobile.svg";
 import badgestatistics from "../../assets/badgestatistics.svg";
 import badgeCard from "../../assets/badgeCard.svg";
 import badgeContactless from "../../assets/badgeContactless.svg";
+import { useEffect, useState } from "react";
+
+type FeaturesData = {
+  mainTitle: string;
+  badgeIcon: string[];
+  badgeTitle: string[];
+  badgeDescription: string[];
+};
+
+const featuresMock: FeaturesData = {
+  mainTitle: "",
+  badgeIcon: [],
+  badgeTitle: [],
+  badgeDescription: [],
+};
+
+async function getServerData(): Promise<FeaturesData> {
+  const serverResponse = await fetch("http://localhost:3000/features-data", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userId: 1,
+    }),
+  });
+
+  const response = await serverResponse.json();
+
+  return response as FeaturesData;
+}
 
 function Features() {
+  const [featuresJsonData, setFeaturesJsonData] =
+    useState<FeaturesData>(featuresMock);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const badgeIconsMap: Record<string, string> = {
+    badgeInstant,
+    badgeSaving,
+    badgeMobile,
+    badgestatistics,
+    badgeCard,
+    badgeContactless,
+  };
+
+  useEffect(() => {
+    (async () => {
+      setLoading(true);
+
+      const serverData = await getServerData();
+
+      setFeaturesJsonData(serverData);
+
+      setLoading(false);
+    })();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="Features">
+        <div className="container">
+          <div style={{ fontSize: 100 }}>Loading...</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="Features">
       <div className="container">
         <div className="left">
-          <h1 className="header-medium">One app. One banking.</h1>
+          <h1 className="header-medium">{featuresJsonData.mainTitle}</h1>
           <div className="list">
-            <div className="features-text-item">
-              <img src={badgeInstant} alt="Instant transactions" />
-              <div>
-                <h3>Saving Accounts</h3>
-                <p>
-                  Odio euismod lacinia at quis. Amet purus gravida quis blandit
-                  turpis.
-                </p>
+            {featuresJsonData.badgeIcon.map((iconKey, index) => (
+              <div className="features-text-item" key={index}>
+                <img
+                  src={badgeIconsMap[iconKey]}
+                  alt={featuresJsonData.badgeTitle[index]}
+                />
+                <div>
+                  <h3>{featuresJsonData.badgeTitle[index]}</h3>
+                  <p>{featuresJsonData.badgeDescription[index]}</p>
+                </div>
               </div>
-            </div>
-            <div className="features-text-item">
-              <img src={badgeSaving} alt="saving badge" />
-              <div>
-                <h3>Saving Accounts</h3>
-                <p>
-                  Odio euismod lacinia at quis. Amet purus gravida quis blandit
-                  turpis.
-                </p>
-              </div>
-            </div>
-            <div className="features-text-item">
-              <img src={badgeMobile} alt="mobile banking badge" />
-              <div>
-                <h3>Mobile Banking</h3>
-                <p>
-                  Odio euismod lacinia at quis. Amet purus gravida quis blandit
-                  turpis.
-                </p>
-              </div>
-            </div>
-            <div className="features-text-item">
-              <img src={badgestatistics} alt="Advanced statistics" />
-              <div>
-                <h3>Virtual Cards</h3>
-                <p>
-                  Odio euismod lacinia at quis. Amet purus gravida quis blandit
-                  turpis.
-                </p>
-              </div>
-            </div>
-            <div className="features-text-item">
-              <img src={badgeCard} alt="virtual card badge" />
-              <div>
-                <h3>Virtual Cards</h3>
-                <p>
-                  Odio euismod lacinia at quis. Amet purus gravida quis blandit
-                  turpis.
-                </p>
-              </div>
-            </div>
-            <div className="features-text-item">
-              <img src={badgeContactless} alt="Contactless payments" />
-              <div>
-                <h3>Virtual Cards</h3>
-                <p>
-                  Odio euismod lacinia at quis. Amet purus gravida quis blandit
-                  turpis.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
         <div className="cellphone">
