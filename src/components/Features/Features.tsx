@@ -1,5 +1,5 @@
 import "./Features.css";
-import cellphone from "../../assets/cellphone.svg";
+import cellphone from "../../assets/cellphone.png";
 import badgeInstant from "../../assets/badgeInstant.svg";
 import badgeSaving from "../../assets/badgeSaving.svg"; // Additional icons for other features
 import badgeMobile from "../../assets/badgeMobile.svg";
