@@ -1,37 +1,45 @@
 import { Request, Response } from "express";
-
-type FeaturesData = {
-  mainTitle: string;
-  badgeIcon: string[];
-  badgeTitle: string[];
-  badgeDescription: string[];
-};
+import FeaturesData from "@typings/FeaturesData";
 
 const featuresDataServer: FeaturesData = {
   mainTitle: "One app. One Banking.",
-  badgeIcon: [
-    "badgeInstant",
-    "badgeSaving",
-    "badgeMobile",
-    "badgestatistics",
-    "badgeCard",
-    "badgeContactless",
-  ],
-  badgeTitle: [
-    "Saving Accounts",
-    "Saving Accounts",
-    "Mobile Banking",
-    "Virtual Cards",
-    "Virtual Cards",
-    "Virtual Cards",
-  ],
-  badgeDescription: [
-    "Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis",
-    "Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis",
-    "Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis",
-    "Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis",
-    "Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis",
-    "Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis",
+  featuresItems: [
+    {
+      icon: "badgeInstant",
+      title: "Saving Accounts",
+      description:
+        "1 Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis",
+    },
+    {
+      icon: "badgeSaving",
+      title: "Saving Accounts",
+      description:
+        "2 Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis",
+    },
+    {
+      icon: "badgeMobile",
+      title: "Mobile Banking",
+      description:
+        "3 Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis",
+    },
+    {
+      icon: "badgestatistics",
+      title: "Saving Accounts",
+      description:
+        "4 Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis",
+    },
+    {
+      icon: "badgeCard",
+      title: "Saving Accounts",
+      description:
+        "5 Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis",
+    },
+    {
+      icon: "badgeContactless",
+      title: "Saving Accounts",
+      description:
+        "6 Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis",
+    },
   ],
 };
 
@@ -44,7 +52,7 @@ function featuresBannerController(req: Request, res: Response) {
 
   setTimeout(() => {
     res.send(featuresDataServer);
-  }, 5000);
+  }, 1000);
 }
 
 export default featuresBannerController;

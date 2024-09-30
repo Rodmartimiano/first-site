@@ -7,20 +7,7 @@ import badgestatistics from "../../assets/badgestatistics.svg";
 import badgeCard from "../../assets/badgeCard.svg";
 import badgeContactless from "../../assets/badgeContactless.svg";
 import { useEffect, useState } from "react";
-
-type FeaturesData = {
-  mainTitle: string;
-  badgeIcon: string[];
-  badgeTitle: string[];
-  badgeDescription: string[];
-};
-
-const featuresMock: FeaturesData = {
-  mainTitle: "",
-  badgeIcon: [],
-  badgeTitle: [],
-  badgeDescription: [],
-};
+import FeaturesData, { featuresMock } from "@typings/FeaturesData";
 
 async function getServerData(): Promise<FeaturesData> {
   const serverResponse = await fetch("http://localhost:3000/features-data", {
@@ -80,15 +67,12 @@ function Features() {
         <div className="left">
           <h1 className="header-medium">{featuresJsonData.mainTitle}</h1>
           <div className="list">
-            {featuresJsonData.badgeIcon.map((iconKey, index) => (
+            {featuresJsonData.featuresItems.map((item, index) => (
               <div className="features-text-item" key={index}>
-                <img
-                  src={badgeIconsMap[iconKey]}
-                  alt={featuresJsonData.badgeTitle[index]}
-                />
+                <img src={badgeIconsMap[item.icon]} alt={item.title} />
                 <div>
-                  <h3>{featuresJsonData.badgeTitle[index]}</h3>
-                  <p>{featuresJsonData.badgeDescription[index]}</p>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
                 </div>
               </div>
             ))}
