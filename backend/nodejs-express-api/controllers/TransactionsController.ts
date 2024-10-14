@@ -1,18 +1,11 @@
 import { Request, Response } from "express";
+import TransactionsData from "@typings/Transactions";
 
-type transactionsData = {
-  mainTitle: string;
-  description: string;
-  badgeTexts: string[];
-  showTransactionscard: boolean;
-};
-
-const TransactionsDataServer: transactionsData = {
+const TransactionsDataServer: TransactionsData = {
   mainTitle: "Send & receive money instantly",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
   badgeTexts: ["Malesuada Ipsum", "Vestibulum", "Parturient Lorem"],
-
   showTransactionscard: true,
 };
 
@@ -23,9 +16,7 @@ function transactionsController(req: Request, res: Response) {
 
   console.log(frontendParams.userId);
 
-  setTimeout(() => {
-    res.send(TransactionsDataServer);
-  }, 5000);
+  res.send(TransactionsDataServer);
 }
 
 export default transactionsController;

@@ -1,24 +1,9 @@
+import React from "react";
 import "./Transactions.css";
 import transaction from "../../assets/transactions.svg";
 import badge2 from "../../assets/badge2.svg";
 import { useEffect, useState } from "react";
-import React from "react";
-
-type TransactionsData = {
-  mainTitle: string;
-  description: string;
-  badgeTexts: string[];
-  showOpenAccount: boolean;
-  showCompareCards: boolean;
-};
-
-const TransactionsMock: TransactionsData = {
-  mainTitle: "",
-  description: "",
-  badgeTexts: [],
-  showOpenAccount: false,
-  showCompareCards: false,
-};
+import TransactionsData, { TransactionsMock } from "@typings/Transactions"
 
 async function getServerData(): Promise<TransactionsData> {
   const serverReponse = await fetch("http://localhost:3000/transactions-data", {
@@ -39,6 +24,7 @@ async function getServerData(): Promise<TransactionsData> {
 function Transactions() {
   const [TransactionsJsonData, settransactionsJsonData] =
     useState<TransactionsData>(TransactionsMock);
+
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {

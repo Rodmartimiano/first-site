@@ -48,6 +48,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  gap: 16px;
 }
 
 
@@ -78,4 +79,10 @@
   .Transactions .cards {
     display: none;
   }
+}
+
+.Transactions .transactions-text-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
