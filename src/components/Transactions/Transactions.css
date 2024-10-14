@@ -1,0 +1,81 @@
+.Transactions {
+  padding: 128px 0;
+  display: flex;
+  overflow: hidden;
+  margin: 0 auto;
+  justify-content: center;
+  background-color: #E8F2EE;
+  gap: 165px;
+  height: 636px;
+}
+
+.Transactions .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 165px;
+}
+
+@media screen and (max-width: 1366px) {
+  .Transactions .container {
+    padding: 0 50px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .Transactions .container {
+    gap: 165px;
+  }
+}
+
+.Transactions .header-medium {
+  font-size: 64px;
+  line-height: 70px;
+  font-weight: 500;
+  max-width: 535px;
+  margin-bottom: 16px;
+}
+
+.Transactions .description h2 {
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 500;
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+
+.Transactions .list {
+  margin-bottom: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+
+.Transactions .list .hero-text-item {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+.Transactions .list .hero-text-item span {
+  font-size: 18px;
+  line-height: 180%;
+  font-weight: 500;
+}
+
+.Transactions .Transactionscards {
+  position: relative;
+}
+
+.Transactions .Transactionscards img {
+  position: relative;
+  top: -41px;
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .Transactions .cards {
+    display: none;
+  }
+}
