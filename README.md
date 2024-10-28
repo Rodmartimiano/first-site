@@ -17,3 +17,22 @@
 - git commit -m "Mensagem de texto"
 - git pull origin main
 - git push origin main
+
+## Comandos de BASH basicos
+
+- cd -> Para movimentar entre pastas
+  - exemplo: cd /home
+  - exemplo: cd ./migrations
+- la -la -> Listar o que tem na pasta
+
+## Comandos basicos do projeto
+
+- para subir o docker: docker compose -f docker-compose.yml up
+- usuario mysql dar acesso ao banco de dados:
+
+  ```sql
+
+  GRANT ALL ON *.* TO 'mysql'@'%' WITH GRANT OPTION;
+  flush PRIVILEGES
+
+  ```
