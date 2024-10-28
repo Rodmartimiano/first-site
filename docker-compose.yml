@@ -15,3 +15,28 @@ services:
       - "3306:3306"
     volumes:
       - ./mysql/dbs:/var/lib/mysql
+
+  frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: ./frontend/Dockerfile
+    volumes:
+      - ./frontend:/code
+      - ./typings:/typings
+      - ./environment:/environment
+    ports:
+      - 3450:3450
+    command: sh -c "npm install && npm run dev"
+
+  backend_1:
+    container_name: backend_1
+    build:
+      context: .
+      dockerfile: ./backend/nodejs-express-api/Dockerfile
+    volumes:
+      - ./backend/nodejs-express-api:/code
+      - ./typings:/typings
+    ports:
+      - 3490:3490
+    command: sh -c "npm install && npm run dev"

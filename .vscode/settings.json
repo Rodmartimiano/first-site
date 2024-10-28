@@ -16,7 +16,7 @@
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
-    "[javascript][javascriptreact][typescript]": {
+    "[javascript][javascriptreact][typescript][typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[json][jsonc]": {

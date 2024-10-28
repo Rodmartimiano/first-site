@@ -8,9 +8,12 @@ import badgeCard from "../../assets/badgeCard.svg";
 import badgeContactless from "../../assets/badgeContactless.svg";
 import { useEffect, useState } from "react";
 import FeaturesData, { featuresMock } from "@typings/FeaturesData";
+import getConfig from "@envconfigs/EnvConfig";
 
 async function getServerData(): Promise<FeaturesData> {
-  const serverResponse = await fetch("http://localhost:3000/features-data", {
+  const confis = getConfig();
+
+  const serverResponse = await fetch(confis.apiUrl + "/features-data", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

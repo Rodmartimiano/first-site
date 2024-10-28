@@ -10,12 +10,13 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "http://localhost:3450",
   })
 );
 
-const port = 3000;
+const port = 3490;
 
+app.get("/dummy", (req, res) => res.send("dummy"));
 app.post("/hero-data", heroBannerController);
 app.post("/features-data", featuresBannerController);
 app.post("/transactions-data", TransactionsBannerController);
@@ -23,6 +24,6 @@ app.post("/transactions-data", TransactionsBannerController);
 // TODO more apis
 // app.get("/features-data", featuresDataController);
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log("Server up and running at port " + port);
 });

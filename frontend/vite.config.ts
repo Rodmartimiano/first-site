@@ -8,6 +8,11 @@ export default defineConfig({
   resolve: {
     alias: {
       "@typings": path.resolve(__dirname, "./../typings"),
+      "@envconfigs": path.resolve(__dirname, "./../environment"),
     },
+  },
+  server: {
+    port: 3450,
+    host: "0.0.0.0",
   },
 });

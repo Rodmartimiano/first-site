@@ -1,12 +1,14 @@
-import React from "react";
 import "./Transactions.css";
 import transaction from "../../assets/transactions.svg";
 import badge2 from "../../assets/badge2.svg";
 import { useEffect, useState } from "react";
-import TransactionsData, { TransactionsMock } from "@typings/Transactions"
+import TransactionsData, { TransactionsMock } from "@typings/Transactions";
+import getConfig from "@envconfigs/EnvConfig";
 
 async function getServerData(): Promise<TransactionsData> {
-  const serverReponse = await fetch("http://localhost:3000/transactions-data", {
+  const configs = getConfig();
+
+  const serverReponse = await fetch(configs.apiUrl + "/transactions-data", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

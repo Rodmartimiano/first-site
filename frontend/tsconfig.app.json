@@ -25,7 +25,10 @@
     "paths": {
       "@typings/*": [
         "./../typings/*"
-      ]
+      ],
+      "@envconfigs/*": [
+        "./../environment/*"
+      ],
     }
   },
   "include": [

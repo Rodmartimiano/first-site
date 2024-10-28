@@ -4,6 +4,7 @@ import Label from "../Label/Label";
 import cardimg from "../../assets/cards.svg";
 import badge from "../../assets/badge.svg";
 import { useEffect, useState } from "react";
+import envConfigs from "@envconfigs/EnvConfig"
 
 type HeroData = {
   mainTitle: string;
@@ -22,7 +23,9 @@ const heroMock: HeroData = {
 };
 
 async function getServerData(): Promise<HeroData> {
-  const serverReponse = await fetch("http://localhost:3000/hero-data", {
+  const configs = envConfigs();
+
+  const serverReponse = await fetch(configs.apiUrl + "/hero-data", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
