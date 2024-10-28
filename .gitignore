@@ -21,7 +21,8 @@ dist-ssr
 *.sln
 *.sw?
 
-*/**/node_modules
+*/node_modules/
+*/**/node_modules/*
 
 mysql/*
 !mysql/Dockerfile
