@@ -1,13 +1,6 @@
 import { Request, Response } from "express";
 import connectDB from "../models/mysql";
-
-type HeroData = {
-  mainTitle: string;
-  description: string;
-  badgeTexts: string[];
-  showOpenAccount: boolean;
-  showCompareCards: boolean;
-};
+import HeroData from "@typings/HeroData";
 
 type HeroDataDB = {
   main_title: string;

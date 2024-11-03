@@ -27,7 +27,9 @@
 
 ## Comandos basicos do projeto
 
+- para construir o docker: docker compose -f docker-compose.yml build
 - para subir o docker: docker compose -f docker-compose.yml up
+- para parar o docker: docker compose -f docker-compose.yml stop
 - usuario mysql dar acesso ao banco de dados:
 
   ```sql
