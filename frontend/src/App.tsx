@@ -3,6 +3,8 @@ import Hero from "./components/Hero/Hero";
 import NavBar from "./components/Navbar/NavBar";
 import Transactions from "./components/Transactions/Transactions";
 import "./App.css";
+import Savings from "./components/Savings/Savings";
+import React from "react";
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
       <Hero />
       <Features />
       <Transactions />
+      <Savings />
     </div>
   );
 }

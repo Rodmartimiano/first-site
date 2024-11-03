@@ -5,7 +5,8 @@
     "lib": [
       "ES2020",
       "DOM",
-      "DOM.Iterable"
+      "DOM.Iterable",
+      "dom"
     ],
     "module": "ESNext",
     "skipLibCheck": true,
@@ -15,7 +16,7 @@
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "react",
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
@@ -27,11 +28,14 @@
         "./../typings/*"
       ],
       "@envconfigs/*": [
-        "./../environment/*"
+        "../environment/*"
       ],
     }
   },
   "include": [
     "src",
+  ],
+  "exclude": [
+    "./node_modules/**/*"
   ]
 }

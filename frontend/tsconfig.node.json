@@ -3,7 +3,8 @@
     "jsx": "react",
     "target": "ES2022",
     "lib": [
-      "ES2023"
+      "ES2023",
+      "dom"
     ],
     "module": "ESNext",
     "skipLibCheck": true,
@@ -18,5 +19,20 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@typings/*": [
+        "./../typings/*"
+      ],
+      "@envconfigs/*": [
+        "../environment/*"
+      ],
+    }
   },
+  "include": [
+    "src",
+  ],
+  "exclude": [
+    "./node_modules/**/*"
+  ]
 }

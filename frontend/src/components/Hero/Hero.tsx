@@ -4,7 +4,8 @@ import Label from "../Label/Label";
 import cardimg from "../../assets/cards.svg";
 import badge from "../../assets/badge.svg";
 import { useEffect, useState } from "react";
-import envConfigs from "@envconfigs/EnvConfig"
+import envConfigs from "@envconfigs/EnvConfig";
+import React from "react";
 
 type HeroData = {
   mainTitle: string;

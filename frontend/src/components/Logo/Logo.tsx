@@ -1,3 +1,4 @@
+import React from "react";
 import "./Logo.css";
 
 type LogoSizes = "small" | "medium";

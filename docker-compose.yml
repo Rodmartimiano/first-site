@@ -37,6 +37,7 @@ services:
     volumes:
       - ./backend/nodejs-express-api:/code
       - ./typings:/typings
+      - ./environment:/environment
     ports:
       - 3490:3490
     command: sh -c "npm install && npm run dev"

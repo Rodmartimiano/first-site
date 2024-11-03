@@ -9,6 +9,7 @@ import badgeContactless from "../../assets/badgeContactless.svg";
 import { useEffect, useState } from "react";
 import FeaturesData, { featuresMock } from "@typings/FeaturesData";
 import getConfig from "@envconfigs/EnvConfig";
+import React from "react";
 
 async function getServerData(): Promise<FeaturesData> {
   const confis = getConfig();

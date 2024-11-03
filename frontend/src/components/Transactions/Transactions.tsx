@@ -4,6 +4,7 @@ import badge2 from "../../assets/badge2.svg";
 import { useEffect, useState } from "react";
 import TransactionsData, { TransactionsMock } from "@typings/Transactions";
 import getConfig from "@envconfigs/EnvConfig";
+import React from "react";
 
 async function getServerData(): Promise<TransactionsData> {
   const configs = getConfig();

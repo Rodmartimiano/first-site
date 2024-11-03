@@ -1,0 +1,32 @@
+.Savings {
+  padding: 128px 0;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.Savings .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 165px;
+}
+
+@media screen and (max-width: 1366px) {
+  .Savings .container {
+    padding: 0 50px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .Savings .container {
+    gap: 0px;
+  }
+}
+
+.Savings .header-medium {
+  font-size: 100px;
+  line-height: 110px;
+  font-weight: 500;
+  max-width: 535px;
+  margin-bottom: 16px;
+}
